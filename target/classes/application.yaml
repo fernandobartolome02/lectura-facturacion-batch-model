@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: local
+core:
+  server:
+    url: fac-backend:8087
+server:
+  port: 8086
+logging:
+  level:
+    com:
+      zaxxer: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
+      springframework: INFO
+      springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+  pattern:
+    file: '%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg traceID=%X{trace_id} %n'
+oracle:
+  jdbc:
+    Trace: true
+    driver:
+      level: DEBUG
+    pool:
+      level: DEBUG
+    util:
+      level: DEBUG
+  level: DEBUG
+  sql:
+    level: DEBUG
